@@ -1,5 +1,8 @@
 app
-  .controller('DatePickerCtrl', ['$scope', function($scope) {
+  .controller('FormCtrl', ['$scope', function($scope) {
     $scope.userData = {};
+    console.log('FormCtrl')
+  }])
+  .controller('DatePickerCtrl', ['$scope', function($scope) {
     console.log('DatePickerCtrl')
   }])
