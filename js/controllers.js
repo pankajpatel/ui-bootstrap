@@ -35,8 +35,3 @@ app
     // You can do the stuff with date here
     console.log('DatePickerCtrl')
   }])
-
-  // Please note that $uibModalInstance represents a modal window (instance) dependency.
-  // It is not the same as the $uibModal service used above.
-
-  
