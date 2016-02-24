@@ -39,10 +39,12 @@
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <button type="button" ng-click="showTerms()" ng-if="!userData.agreeTerms" class="btn btn-default">Terms and Conditions</button>
+          	<input type="checkbox" ng-checked="userData.agree" disabled>
+            <button type="button" ng-click="showTerms()"  class="btn btn-default"> Terms and Conditions</button>
             <button type="submit" ng-if="userData.agreeTerms" class="btn btn-default">Sign up</button>
           </div>
         </div>
       </form>
     </div>
 </section>
+
