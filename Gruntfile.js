@@ -61,5 +61,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['copy:main','watch']);
+  grunt.registerTask('default', ['copy:main']);
+  grunt.registerTask('with-watch', ['copy:main', 'watch']);
 };
