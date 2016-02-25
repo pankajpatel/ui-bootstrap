@@ -7,7 +7,7 @@
 <section>
     <div class="container" ng-controller="FormCtrl">
       <h2>Datepicker</h2>
-      <form class="form-horizontal">
+      <form class="form-horizontal" method="post">
         <div class="form-group">
           <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
           <div class="col-sm-10">
@@ -22,6 +22,7 @@
               ng-required="true" close-text="Close">
 
               	<div>
+              		<p><small class="text-info">datepicker is here</small></p>
 		            <p>{{userData.dob | date: 'medium'}}</p>
 		            <p>{{userData.dob | date: 'dd - MMMM - yyyy'}}</p>
 		            <p>{{userData.dob | date: 'hh:mm:ss a'}}</p>
@@ -30,18 +31,11 @@
         </div>
         <div class="form-group">
           <div class="col-sm-offset-2 col-sm-10">
-            <div class="checkbox">
-              <label>
-                <input type="checkbox"> Remember me
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-offset-2 col-sm-10">
-          	<input type="checkbox" ng-checked="userData.agree" disabled>
-            <button type="button" ng-click="showTerms()"  class="btn btn-default"> Terms and Conditions</button>
-            <button type="submit" ng-if="userData.agreeTerms" class="btn btn-default">Sign up</button>
+          	
+            <p>
+            	<button type="button" ng-click="showTerms()"  class="btn btn-default"> Terms and Conditions</button> <input type="checkbox" ng-checked="userData.agree" disabled> <small class="text-info">modal is here</small>
+            </p>
+            <p><button type="submit" ng-if="userData.agree" class="btn btn-default">Sign up</button></p>
           </div>
         </div>
       </form>
