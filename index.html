@@ -43,7 +43,7 @@
     <!-- Form Partial; open js/partials/form.html to see its content -->
     <div ng-include="'js/partials/form.html'" ></div>
 
-
+    <center><div id="google-ads-1"></div></center>
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-animate.js"></script>
@@ -54,11 +54,12 @@
      
         /* Calculate the width of available ad space */
         ad = document.getElementById('google-ads-1');
-     
-        if (ad.getBoundingClientRect().width) {
-            adWidth = ad.getBoundingClientRect().width; // for modern browsers 
-        } else {
-            adWidth = ad.offsetWidth; // for old IE 
+        if( ad ){
+          if (ad.getBoundingClientRect().width) {
+              adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+          } else {
+              adWidth = ad.offsetWidth; // for old IE 
+          }
         }
      
         /* Replace ca-pub-XXX with your AdSense Publisher ID */ 

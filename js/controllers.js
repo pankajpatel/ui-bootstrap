@@ -10,6 +10,15 @@ app
       //send the status as false
       $uibModalInstance.close( false );
     };
+    /* Calculate the width of available ad space */
+    ad = document.getElementById('google-ads-1');
+    if( ad ){
+      if (ad.getBoundingClientRect().width) {
+          adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+      } else {
+          adWidth = ad.offsetWidth; // for old IE 
+      }
+    }
   }])
   .controller('FormCtrl', ['$scope','$uibModal','$log', function($scope, $uibModal, $log) {
     $scope.userData = {};
@@ -29,6 +38,15 @@ app
       }, function () {
         $log.info('Modal dismissed at: ' + new Date());
       });
+    }
+    /* Calculate the width of available ad space */
+    ad = document.getElementById('google-ads-1');
+    if( ad ){
+      if (ad.getBoundingClientRect().width) {
+          adWidth = ad.getBoundingClientRect().width; // for modern browsers 
+      } else {
+          adWidth = ad.offsetWidth; // for old IE 
+      }
     }
   }])
   .controller('DatePickerCtrl', ['$scope', function($scope) {
