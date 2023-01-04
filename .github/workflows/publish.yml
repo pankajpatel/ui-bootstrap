@@ -18,8 +18,19 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: npm install -g firebase-tools
-      - run: npm install -g grunt-cli
-      - run: npm i
-      - run: grunt
-      - run: firebase deploy --token "${{secrets.FIREBASE_TOKEN}}"
+      
+      - name: Build
+        run: |
+          npm install -g grunt-cli
+          npm i
+          grunt
+      # - run: firebase deploy --token "${{secrets.FIREBASE_TOKEN}}"
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          BRANCH: gh-pages # The branch the action should deploy to.
+          FOLDER: public # The folder the action should deploy.
+
+        env:
+          CI: true
