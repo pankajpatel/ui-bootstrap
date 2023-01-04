@@ -22,10 +22,11 @@
   },
   "homepage": "https://github.com/pankajpatel/ui-bootstrap#readme",
   "dependencies": {
-    "grunt": "^1.0.0",
-    "grunt-contrib-copy": "^0.8.2",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-copy": "^0.1.0",
-    "jit-grunt": "^0.9.1"
+    "grunt": "^1.5.3",
+    "grunt-contrib-watch": "^1.1.0",
+    "jit-grunt": "^0.10.0"
+  },
+  "devDependencies": {
+    "grunt-contrib-copy": "^1.0.0"
   }
 }
