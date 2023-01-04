@@ -10,17 +10,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
-        with:
-          node-version: 16
-      - run: npm ci
-      - run: npm test
-
-  publish-gpr:
-    needs: build
-    runs-on: ubuntu-latest
     permissions:
       contents: read
       packages: write
@@ -31,6 +20,6 @@ jobs:
           node-version: 16
       - run: npm install -g firebase-tools
       - run: npm install -g grunt-cli
-      - run: npm ci
+      - run: npm i
       - run: grunt
       - run: firebase deploy --token "${secrets.FIREBASE_TOKEN}"
